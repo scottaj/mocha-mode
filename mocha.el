@@ -49,7 +49,20 @@
 
 (defcustom mocha-reporter "dot"
   "Name of reporter to use."
-  :type 'string
+  :type '(radio (const :tag "doc         - HTML documentation" "doc")
+                (const :tag "dot         - dot matrix representation" "dot")
+                (const :tag "json        - single JSON object" "json")
+                (const :tag "json-stream - newline delimited JSON events" "json-stream")
+                (const :tag "landing     - Unicode landing strip" "landing")
+                (const :tag "list        - like 'spec' reporter but flat" "list")
+                (const :tag "markdown    - GitHub Flavored Markdown" "markdown")
+                (const :tag "min         - essentially just a summary" "min")
+                (const :tag "nyan        - 'nyan cat'" "nyan")
+                (const :tag "progress    - a progress bar" "progress")
+                (const :tag "spec        - hierarchical & verbose" "spec")
+                (const :tag "tap         - TAP-compatible output" "tap")
+                (const :tag "xunit       - XUnit-compatible XML output" "xunit")
+                (string :tag "Custom reporter"))
   :group 'mocha
   :safe #'stringp)
 
